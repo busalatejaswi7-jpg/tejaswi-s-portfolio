@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const nav = [
+const nav = [ 
   { id: "intro", label: "Intro" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Work" },
@@ -12,43 +12,46 @@ const nav = [
 ];
 
 const skills: Record<string, string[]> = {
-  Languages: ["JavaScript", "TypeScript", "C++", "Java", "Python (basics)"],
-  Frontend: ["React.js", "Next.js", "HTML5", "Tailwind CSS", "Responsive design"],
+  Languages: ["JavaScript (ES6+)", "TypeScript", "C++", "Java", "Python (basics)"],
+  Frontend: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
   Backend: ["Node.js", "Express.js", "REST APIs"],
   Database: ["MongoDB", "MongoDB Atlas", "SQL", "MySQL"],
-  Concepts: ["OOP", "DBMS", "API integration", "CRUD", "State management", "Async programming"],
-  Tools: ["Git", "GitHub", "Postman", "Swagger", "VS Code", "Vercel", "Render"],
+  Concepts: ["Component architecture", "API integration", "CRUD", "OOP", "DBMS", "Async programming", "Promises", "Async/await", "Event handling"],
+  Tools: ["Git", "GitHub", "npm", "Postman", "Swagger", "Chrome DevTools", "VS Code", "Vercel", "Render"],
 };
 
 const projects = [
   {
-    title: "AI Career Intelligence Platform",
-    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Multer"],
+    title: "FINDIT — Local Product Discovery",
+    stack: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL", "Prisma"],
     description:
-      "A full-stack career platform for job application tracking, resume management, and skill-gap analysis.",
+      "A full-stack platform that helps customers find products at local shops and check live stock availability.",
     points: [
-      "JWT and bcrypt authentication protecting every application workflow.",
-      "REST APIs built with Express.js and MongoDB Atlas.",
-      "Resume uploads handled with Multer, wired to the frontend through Axios.",
-      "Frontend deployed on Vercel, backend on Render.",
+      "Built product search and REST API integration for product and inventory discovery.",
+      "Created authenticated shop-owner workflows to manage shops, products and stock.",
+      "Implemented product reservations, database-backed stock updates and reservation history.",
+      "Structured the backend with routes, controllers, services and repositories.",
     ],
     links: [
-      { label: "Live", href: "https://ai-analyzer-kohl.vercel.app" },
-      { label: "GitHub", href: "https://github.com/busalatejaswi7-jpg" },
+      { label: "Live demo", href: "https://find-it-ivory.vercel.app/" },
+      { label: "Source code", href: "https://github.com/busalatejaswi7-jpg/FindIt" },
     ],
   },
   {
-    title: "Developer Hub — Authentication Platform",
-    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Context API"],
+    title: "AI Career Intelligence Platform",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Axios", "Multer"],
     description:
-      "A full-stack authentication platform with separate User and Admin access control.",
+      "A full-stack career platform for job application tracking, resume management and skill-gap analysis.",
     points: [
-      "JWT authentication with protected routes and Axios interceptors.",
-      "Registration, login, profile management, search and pagination.",
-      "Admin APIs for managing users, backed by role-based permissions.",
-      "Auth state managed with React Context; deployed on Render.",
+      "Implemented JWT and bcrypt authentication with protected application workflows.",
+      "Developed Express.js REST APIs with MongoDB Atlas for user and application data.",
+      "Integrated resume uploads with Multer and connected frontend workflows using Axios.",
+      "Designed responsive React interfaces and deployed on Vercel and Render.",
     ],
-    links: [{ label: "Live demo", href: "https://frontend-pskx.onrender.com" }],
+    links: [
+      { label: "Live demo", href: "https://ai-analyzer-kohl.vercel.app" },
+      { label: "Source code", href: "https://github.com/busalatejaswi7-jpg/ai-analyzer" },
+    ],
   },
 ];
 
@@ -58,7 +61,7 @@ export default function Home() {
 
   useEffect(() => {
     const onScroll = () => {
-      const el = document.documentElement;
+      const el = document.documentElement; 
       const scrollable = el.scrollHeight - el.clientHeight;
       setProgress(scrollable > 0 ? el.scrollTop / scrollable : 0);
     };
@@ -156,18 +159,17 @@ export default function Home() {
       <main className="flex-1 px-6 py-14 lg:px-20 lg:py-20">
         {/* Intro */}
         <section id="intro" className="relative max-w-xl scroll-mt-10">
-          <div className="glow-blob -top-24 -left-10 h-72 w-72" />
-
-          <p className="relative text-sm font-medium tracking-wide text-gold">
+          <p className="relative text-sm font-medium text-gold">
             Open to new opportunities
           </p>
           <h1 className="relative mt-5 font-display text-[2.75rem] leading-[1.12] tracking-tight sm:text-6xl">
             I build interfaces people enjoy using, and ship them with Next.js.
           </h1>
           <p className="relative mt-6 text-lg leading-8 text-bone-dim">
-            Frontend-focused full-stack developer with hands-on experience shipping
-            production web applications — responsive UI, REST API integration, reusable
-            components, and the unglamorous work of debugging real frontend issues.
+            Frontend-focused full-stack developer with 6 months of professional
+            experience building production web applications with React.js and Next.js.
+            I build responsive interfaces, reusable components and reliable API-driven
+            workflows, with a practical eye for debugging and the details users notice.
           </p>
           <div className="relative mt-9 flex gap-8 text-sm font-semibold">
             <a
@@ -200,7 +202,7 @@ export default function Home() {
 
             <ul className="mt-5 space-y-3 text-bone-dim">
               <li>
-                Built responsive, reusable frontend components with React.js, Next.js,
+                Developed responsive, reusable interfaces with React.js, Next.js,
                 TypeScript and Tailwind CSS.
               </li>
               <li>
@@ -211,12 +213,15 @@ export default function Home() {
                 Integrated REST APIs to fetch, submit and display application data,
                 handling loading states and errors on the frontend.
               </li>
-              <li>Implemented page navigation and routing across application workflows.</li>
+              <li>
+                Collaborated with backend developers on Node.js and Express.js APIs, using
+                Git and GitHub for team development.
+              </li>
               <li>
                 Debugged frontend and API integration issues with Chrome DevTools, the
                 Network tab and Postman.
               </li>
-              <li>Collaborated with backend developers using Node.js, Express.js and Git.</li>
+              <li>Built mobile-first layouts with Tailwind CSS and modern CSS techniques.</li>
             </ul>
           </div>
         </section>
@@ -229,17 +234,14 @@ export default function Home() {
 
           <div className="mt-8 divide-y divide-line">
             {projects.map((project) => (
-              <article className="group py-8 transition-transform duration-300 first:pt-0 hover:-translate-y-0.5" key={project.title}>
-                <h3 className="font-display text-2xl transition-colors group-hover:text-gold">
+              <article className="project-card group py-8 first:pt-0" key={project.title}>
+                <h3 className="project-title font-display text-2xl">
                   {project.title}
                 </h3>
 
                 <div className="mt-3 flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-line px-3 py-1 text-xs text-bone-dim transition-colors group-hover:border-gold-dim group-hover:text-bone"
-                    >
+                    <span key={tech} className="stack-chip">
                       {tech}
                     </span>
                   ))}
@@ -260,7 +262,7 @@ export default function Home() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-block border-b border-gold pb-0.5 text-sm font-medium text-bone"
+                      className="project-link inline-block border-b border-gold pb-0.5 text-sm font-medium text-bone"
                     >
                       {link.label}
                     </a>
@@ -283,7 +285,7 @@ export default function Home() {
                 <h3 className="w-full shrink-0 text-sm text-bone-dim sm:w-32">{group}</h3>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {items.map((item) => (
-                    <span key={item} className="text-sm">
+                    <span key={item} className="skill-item text-sm">
                       {item}
                     </span>
                   ))}
@@ -295,7 +297,6 @@ export default function Home() {
 
         <div className="my-14 fade-line" />
 
-        {/* Education */}
         <section id="education" className="scroll-mt-10">
           <h2 className="font-display text-3xl">Education</h2>
 
@@ -328,6 +329,9 @@ export default function Home() {
             <div className="mt-3 flex flex-wrap gap-2">
               <span className="rounded-full border border-line px-3 py-1 text-sm">
                 Namaste React — Akshay Saini
+              </span>
+              <span className="rounded-full border border-line px-3 py-1 text-sm">
+                Namaste Node.js — Akshay Saini
               </span>
               <span className="rounded-full border border-line px-3 py-1 text-sm">
                 Web Development — Unacademy

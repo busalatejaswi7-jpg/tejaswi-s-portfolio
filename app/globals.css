@@ -30,6 +30,11 @@ body {
   position: relative;
 }
 
+.site-shell {
+  position: relative;
+  z-index: 1;
+}
+
 /* subtle film-grain texture so the dark background reads as material, not flat color */
 body::before {
   content: "";
@@ -70,6 +75,160 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 3px;
+}
+
+.nav-link,
+.sidebar-contact,
+.text-link,
+.project-link,
+.menu-toggle {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-link {
+  border-left: 2px solid transparent;
+  padding-left: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  padding-left: 8px;
+}
+
+.sidebar-contact:hover,
+.sidebar-contact:focus-visible,
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  color: var(--color-gold);
+}
+
+.availability::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #8bc49a;
+  box-shadow: 0 0 0 4px rgb(139 196 154 / 12%);
+  vertical-align: 1px;
+}
+
+.text-link {
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 4px;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.project-card {
+  margin-inline: -16px;
+  border-left: 2px solid transparent;
+  padding-inline: 14px;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  border-color: var(--color-gold);
+  background: rgb(234 182 85 / 5%);
+}
+
+.project-title {
+  transition: color 180ms ease;
+}
+
+.project-card:hover .project-title,
+.project-card:focus-within .project-title {
+  color: var(--color-gold);
+}
+
+.stack-chip,
+.training-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  color: var(--color-bone-dim);
+  font-size: 12px;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.project-card:hover .stack-chip,
+.project-card:focus-within .stack-chip {
+  border-color: var(--color-gold-dim);
+  color: var(--color-bone);
+}
+
+.project-link {
+  border-bottom: 1px solid var(--color-gold-dim);
+  padding-bottom: 3px;
+  color: var(--color-bone);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.skill-item {
+  transition: color 180ms ease;
+}
+
+.skill-item:hover {
+  color: var(--color-gold);
+}
+
+.education-entry {
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  transition: border-color 180ms ease;
+}
+
+.education-entry:hover {
+  border-color: var(--color-gold-dim);
+}
+
+.training-chip {
+  font-size: 14px;
+}
+
+.primary-action {
+  border: 1px solid var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.primary-action:hover,
+.primary-action:focus-visible {
+  transform: translateY(-2px);
+  background: #f2c878;
+  box-shadow: 0 8px 24px -12px var(--color-gold);
 }
 
 @media (prefers-reduced-motion: reduce) {
